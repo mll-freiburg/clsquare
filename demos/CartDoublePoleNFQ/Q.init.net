@@ -1,0 +1,15 @@
+# Layers: 3
+# Topology (input - hidden - output)
+topology: 7 20 20 1 
+connect_layers
+init_weights 0 0.5
+set_update_f 1 0.100000 5.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 
+set_layer_act_f 1 0
+set_layer_act_f 2 0
+
+#input_scale 1 0 5 5 0
+#input_scale 7 0 0.1 0.1 0
+#input_scale 7 0 0.01 0.01 0
+#input_scale 6 0 0.1 0.1 0
+#input_scale 4 0 0.1 0.1 0
+#input_scale 2 0 0.1 0.1 0

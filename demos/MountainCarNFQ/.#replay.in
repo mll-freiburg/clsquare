@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rm -r nets
+mkdir nets
+
+#calling frameview
+@CLSQUARE_BINARY_DIR@/frameview &
+sleep 1
+#calling clsquare
+@CLSQUARE_EXECUTABLE@ scripts/replay.cls
+

@@ -1,0 +1,33 @@
+== DESCRIPTION ==
+
+Demo for learning a cart-pole task using Neural Fitted Q
+Iteration.
+
+The task is largely identical to the dynamics in "Neuronlike
+Adaptive Elements That Can Solve Difficult Learning Control
+Problems", R.Sutton and C.W.Anderson, IEEE Transactions on
+Systems, Man, and Cybernetics, Vol. SMC-13, No. 5, 1983.
+
+Note that in keeping with the source paper (and in contrast
+to some later compatisons), the system is restricted to the
+actions +10 and -10, preventing it from applying zero force
+to the cart and thus from reaching a statically stable state.
+
+== USAGE ==
+
+To start the learning process, launch the script
+$ ./learn
+Note that learning requires the NFQControl module, which
+is not included in the standard CLSquare bundle.
+
+To replay selected policies from a previous run instead,
+launch the script
+$ ./replay
+The three nets that are replayed illustrate:
+   1: uninitialized network
+  71: policy capable of (usually) avoiding failure, but
+      unable to reach the goal
+  97: policy that reliably keeps the system upright,
+      usually within the goal region
+The complete performance log of that run is included
+in log/test.stat.

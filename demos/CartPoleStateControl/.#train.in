@@ -1,0 +1,7 @@
+if [ ! "$(pidof frameview)" ]
+then
+  @CLSQUARE_BINARY_DIR@/frameview &
+  sleep 1
+fi
+sleep 1
+@CLSQUARE_EXECUTABLE@ cartpole.cls

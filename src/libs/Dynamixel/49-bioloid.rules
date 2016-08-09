@@ -1,0 +1,1 @@
+SUBSYTEM=="usb", SYSFS{idVendor}=="0403", SYSFS{idProduct}=="6001", GROUP="bioloid", MODE="0666", SYMLINK+="dynamixel-%k"

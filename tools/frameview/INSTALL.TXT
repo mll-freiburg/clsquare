@@ -1,0 +1,84 @@
+Installation advises for FrameView2d:
+
+copy frameview-1.X.tar.gz to your favourite directory (e.g. /usr/local
+or /home/myname/). 
+
+gunzip it with 
+
+   gunzip framview-1.X.tar.gz 
+
+and untar it with 
+
+    tar -xvf framview-1.X.tar 
+
+go to the created directory framview-1.X
+
+    cd framview-1.X 
+
+run make 
+
+    make 
+
+depending on your local system you will have to change the lines 
+
+    CXXINCLUDE      = -I/usr/X11R6/include
+    CXXLIBS         = -lm -L/usr/X11R6/lib -lX11
+            
+in your Makefile to compile correctly.     
+
+Now run 
+
+    2dview -help  
+
+to get some information about the possibilities of FrameView2d. To run
+it with a SoccerServer just start FrameView2d after the
+SoccerServer. If the SoccerServer is already running just put the key
+'c' to "connect" to the server (don't put 'c' more than once, because
+each pressing initializes a new connection stub in the  SoccerServer). 
+
+----------------------------------------------------------------------
+This section is optional:
+
+Here a short description how to use other devices then the soccer
+monitor is given (especially for the AsciiDevice).
+
+run 
+   make client2dview
+
+to get a simple program which can control the AsciiDevice of
+FrameView2d. 
+
+You should get a new program
+
+   client2dview
+
+Now run 
+
+   2dview -ascii
+
+and then 
+
+   client2dview -file field_robocup_middlesize.fvd
+
+to see how you can build a new scene from a file. Consult the files
+
+   ascii_processor.h ascii_processor.C ascii_dev.h ascii_dev.C
+
+to get more knowledge how to use the AsciiDevice. Also consult the
+main() function in the
+
+   client2dview.C
+
+file to learn more about other demos. Here just one further example
+
+Run 
+   2dview -ascii
+
+and 
+   client2dview -tree
+
+to get the tree into movement.
+
+----------------------------------------------------------------------
+
+If you still have questions then look into FAQ.TXT.

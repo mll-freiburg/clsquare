@@ -1,0 +1,20 @@
+
+-- I -- initialer build
+
+1. in Verzeichnis CLSquare wechseln
+> cd CLSquare
+2. build Verzeichnis erzeugen 
+>mkdir build
+3. in Verzeichnis build wechseln 
+>cd build
+4. ausführen: 
+>cmake ..
+5. >make install
+
+
+-- II -- Nach Änderungen am Code
+**im Verzeichnis build**
+> make install
+
+Bei hinzugefügten Dateien/Verzeichnissen oder Änderungen an CMakeLists.txt Dateien:
+bei 4. beginnen

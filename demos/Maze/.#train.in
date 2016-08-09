@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# generating the directory for the qtables:
+rm -rf qtables
+mkdir qtables
+
+#calling clsquare
+@CLSQUARE_EXECUTABLE@ scripts/train.cls
+

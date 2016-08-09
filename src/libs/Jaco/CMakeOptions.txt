@@ -1,0 +1,4 @@
+SET ( CURRENT_LIB_NAME Jaco )
+SET ( CURRENT_LIB_DEFAULT OFF )
+SET ( CURRENT_LIB_TEXT "Set to ON to enable hardware interface to Kinova Jaco robotic arm" )
+SET ( CURRENT_LIB_LINK OFF )

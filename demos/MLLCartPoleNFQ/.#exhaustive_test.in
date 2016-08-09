@@ -1,0 +1,28 @@
+#!/bin/bash
+
+cls=$1
+if [ ! -n "$cls" ]; then
+cls=scripts/test.exhaustive.cls
+fi
+echo "Exhaustive Test using clsfile "$cls
+
+for datei in $( find ./nets/s* | sort) 
+do 
+  echo "Testing net: " $datei
+  rm -f Q.test.exh.net
+  rm -f test.exh.stat
+  cp $datei Q.test.exh.net
+  @CLSQUARE_EXECUTABLE@ $cls
+  echo > exh.tmp
+  echo -n "# Testing Net " $datei >> exh.tmp
+  cat exh.tmp > test.exh.header.stat
+  cat test.exh.stat >> test.exh.header.stat
+  cat test.exh.header.stat >> test.exhaustive.stat
+  rm exh.tmp
+  rm test.exh.header.stat
+done ;
+
+rm test.exh.stat
+rm Q.test.exh.net
+cp $cls ./test.exhaustive.cls  # used for documentation
+

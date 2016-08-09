@@ -1,0 +1,8 @@
+# Layers: 4
+# Topology (input - hidden - output)
+topology: 6 20 20 1
+set_layer_act_f 1 1
+set_layer_act_f 2 1
+set_update_f 1 0.100000 50.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+connect_layers
+init_weights 0 0.5

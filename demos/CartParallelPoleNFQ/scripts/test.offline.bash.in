@@ -1,0 +1,23 @@
+#!/bin/bash
+
+NETS=`ls -1 nets/ | wc -l`
+echo "      100.00      100.00        0.00        0.00        0.00    99999.00        1.00     1000.00       -5.00        0.00   100000.00        0.00        0.00        0.00" > test.offline.stat;
+for ((a=1;a<=$NETS;a++))
+ do 
+  net=`printf "%04d" $a`
+  echo "Testing network $net..."
+  sed -e "s|TESTNUM|$net|g" scripts/test.cls > test.offline.cls
+  @CLSQUARE_EXECUTABLE@ test.offline.cls > /dev/null
+  grep -v Fail log/test.stat >> test.offline.stat
+ done
+rm -f test.offline.cls
+rm -f log/test.prot
+rm -f log/test.stat
+gnuplot << EOT
+set terminal postscript eps enhanced color
+set xlabel 'Episode'
+set ylabel 'Cycles'
+set output "performance.eps"
+plot "./test.offline.stat" u 5 notitle
+q
+EOT

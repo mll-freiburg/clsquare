@@ -1,0 +1,10 @@
+rm -r nets log
+mkdir nets
+mkdir log
+#if [ ! "$(pidof frameview)" ]
+#then
+#  @CLSQUARE_BINARY_DIR@/frameview &
+#  sleep 1
+#fi
+@CLSQUARE_EXECUTABLE@ scripts/train.cls
+rm Q.balance.tmp.net

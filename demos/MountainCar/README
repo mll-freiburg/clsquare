@@ -1,0 +1,12 @@
+******************************************************************************************************
+DEMO: Mountain Car
+
+Aspects:
+- graphical output of test situations after each <n> sequences 
+- statistic files of training: train.stat and testing: performance.stat
+- demonstrates the use of the kernel-based RL Controller (variant of Ormoneit & Sen, Machine Learning, 2002)
+- demonstrates the use of the call_cmd mechanism 
+- for testing, reads initial states from file
+
+Starting:
+./train

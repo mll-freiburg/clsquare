@@ -1,0 +1,6 @@
+find_path ( MONO2_INCLUDE_DIR mono-2.0/mono/jit/jit.h HINTS /opt/local/include /usr/local/include )
+find_library ( MONO2_LIBRARY NAMES mono-2.0 HINTS /opt/local/lib /usr/local/lib )
+if ( MONO2_LIBRARY AND MONO2_INCLUDE_DIR )
+  set ( FOUND_MONO2 TRUE )
+endif ()
+mark_as_advanced ( MONO2_INCLUDE_DIR MONO2_LIBRARY )

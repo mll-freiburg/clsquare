@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ ! "$(pidof frameview)" ]
+then
+  @CLSQUARE_BINARY_DIR@/frameview &
+  sleep 1
+fi
+
+TESTNETS=(1 71 98)
+for ((a=0;a<3;a++))
+do 
+  echo "Replaying network "${TESTNETS[$a]}
+  cp log/nets/balance.Q.00`printf "%02d" ${TESTNETS[$a]}`.net replay.tmp.net
+  @CLSQUARE_EXECUTABLE@ scripts/replay.cls
+done
+rm -f replay.tmp.*

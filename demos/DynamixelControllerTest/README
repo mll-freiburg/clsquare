@@ -1,0 +1,14 @@
+Author: Thomas Lampe
+
+Summary:
+
+Simple demo application usable as a taste for working with Dynamixel servos.
+Can also be used to test control latencies.
+Moves a servo to a target position using a simple bang-bang controller.
+
+Instructions:
+
+Requires CLSquare to have been built with the Dynamixel interface library.
+
+IMPORTANT: if used with a complete robot rather than with a single servo, please edit the .cls file and uncomment the matching servo ID settings in the section "robot types" to ensure that only safe servos are used.
+You can also switch the communication library from FTD2XX to FTDI if you do not have the former installed, and choose between the default Robotis firmware and the custom Morpheus one as fits your needs.

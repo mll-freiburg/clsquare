@@ -1,0 +1,6 @@
+#include <stdio.h>
+void run(void) {
+  const char *command = "@MONO_BUILD_COMMAND@";
+  //printf(": %s\n", command);
+  system(command);
+}

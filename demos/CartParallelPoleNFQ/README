@@ -1,0 +1,61 @@
+Author: Thomas Lampe
+
+SUMMARY
+=======
+
+Illustrates a parallel cart-pole task and its solution using
+Neural Fitted Q Iteration. It follows the dynamics and
+methodology described in "Robust Non-Linear Control Through
+Neuroevolution", F.J. Gomez and R. Miikkulainen, 2002.
+
+
+LEARNING
+========
+
+The learning process is started with the script
+$ ./train
+
+The optional library libNFQ is required for learning.
+
+There are several parameters that can be adjusted by changing
+the content of the files in the config/ folder. Most notably,
+the task can be toggled between a fully-Markovian, semi-
+Markovian or non-Markovian one by adjusting the amount of
+information granted to the learner in the file observer.cls.
+
+
+EVALUATION
+==========
+
+During or after learning, the NFQ controller's performance
+can be tested using the script
+$ ./plot
+
+As in the original paper, each generated network will be
+tested from a predefined position, and number of time steps
+until failure (i.e. until one pole falls down) is used
+as the performance measure. Any policy that lasts for
+100000 steps is considered to have solved the task.
+
+
+EXAMPLE
+=======
+
+A selection of policies can be examined visually by running
+$ ./replay
+
+They were generated during a run with the parameters set
+in the configs by default, slving the semi-Markovian task.
+
+All examples are shown from 10 random starting positions
+rather than only the single position used for learning
+to illustrate generalization capabilities.
+
+Three networks are shown
+   1: randomly initialized net, immediately fails
+  66: moderately capable policy that manages to balance
+      the poles on part of the track, but oscillates out
+      of control on others
+  79: practically stable policy that keeps the poles
+      balanced from any starting point
+

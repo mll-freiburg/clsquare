@@ -1,0 +1,4 @@
+SET ( CURRENT_LIB_NAME gp )
+SET ( CURRENT_LIB_DEFAULT ON )
+SET ( CURRENT_LIB_TEXT "Set to OFF to exclude gaussian process library" )
+SET ( CURRENT_LIB_EXTERNAL libgp )

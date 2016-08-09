@@ -1,0 +1,20 @@
+This folder provides a few simple demos to test and become acquainted with the
+CLSquare interface for the Kinova Jaco robotic arm. At present, two demos are
+included.
+
+
+gamepad.cls
+============
+Controls the robot through an 8-axis gamepad. The demo is written for a
+Thrustmaster PS3 controller, but can be adapted to other pads or joysticks
+by changing the axis assignment in the [Controller] section.
+Note that the default gamepad requires pressing both triggers and the square
+button once at the beginning for proper operation.
+
+
+pipe.cls
+========
+Controls the robot by sending target poses through the CLSquare pipe.
+Predefined positions are center, left and right, which are set by
+$ echo "controller_cmd <position>" > /tmp/pipe2cls
+

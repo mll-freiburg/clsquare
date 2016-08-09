@@ -1,0 +1,3 @@
+SET ( CURRENT_LIB_NAME Tapir )
+SET ( CURRENT_LIB_DEFAULT ON )
+SET ( CURRENT_LIB_TEXT "Set to OFF to disable interface to Tapir3 and CarreraTool vision tools" )

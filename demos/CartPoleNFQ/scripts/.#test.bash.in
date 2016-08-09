@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ALLTEST_STAT="test"
+TEST_CLS="test"
+
+if [ $1 -eq 0 ]; then cp Q.init.net Q.balance.tmp.net;
+fi
+
+echo "Do testing after training sequence: "$1
+#first, do a visual testing
+#../../bin/clsquare $TEST_CLS
+
+if [ $1 -eq 0 ]; then rm -f $ALLTEST_STAT.stat;
+fi
+@CLSQUARE_EXECUTABLE@ scripts/$TEST_CLS.cls
+echo -n   $1  $2  $3  > tmp
+cat tmp >> $ALLTEST_STAT.stat
+cat test.tmp.stat >> $ALLTEST_STAT.stat
+rm -f tmp
+rm -f test.tmp.stat

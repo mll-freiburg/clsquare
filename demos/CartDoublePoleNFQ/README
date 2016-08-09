@@ -1,0 +1,23 @@
+== DESCRIPTION ==
+
+Demo for learning a double cart-pole task using Neural Fitted Q
+Iteration.
+
+
+== USAGE ==
+
+To start the learning process, launch the script
+./train
+Note that learning requires the NFQControl module, which
+is not included in the standard CLSquare bundle.
+Task parameters can be adjusted in the config/ folder.
+
+To replay selected policies from a previous run
+instead, launch the script
+./replay
+The script features one randomly initialized network,
+one that performs moderately well (~ episode 60) and
+one that performs perfectly stable (~ episode 180).
+The complete performance log of that run is included
+in log/test1.stat (narrow initialization range) and
+log/test2.stat (full initialization range).

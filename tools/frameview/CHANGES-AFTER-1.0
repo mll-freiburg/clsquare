@@ -1,0 +1,97 @@
+[version 1.4]
+*  the executable is now called frameview and not 2dview anymore
+
+*  tcp/ip is now supported in the AsciiDevice 
+   (formerly only upd/ip was supported)
+
+*  a $HOME/.frameview file is read if it exists. Calling 
+   frameview -conf_file <file> skips the possibly existent 
+   $HOME/.frameview file and reads <file> instead
+
+*  frameview -gen_conf_file > <file> generates a sample conf file
+   (this file can be read in with frameview using the -conf_file
+    option)
+   
+*  -font_inside defines the font for player numbers etc. this is 
+   can now be different form -font_name which defines the font for 
+   the status line.
+
+*   the AsciiProcessor format changed a little bit:
+    after every command a semicolon is required now. For example
+    MOV 0 (1.0,1.0,3.14)   must change to 
+    MOV 0 (1.0,1.0,3.14);
+
+*   SHOW <int>; and HIDE <int>; were added to the AsciiProcessor format
+
+Changes in SmonitorDevice
+
+*  added an 'unzoom' button which is equivalent to pressing the 'i' key
+   (getting to the initial clipping)
+
+*  new mode 'std' added (the old modes 'move' and 'view' are still there). 
+   In this mode you can use the right mouse button to get a popup menu, in
+   which you can 'drop ball' or trigger a 'free kick left/right'. This is 
+   equivalent to pressing the 'b', 'l', or 'r' key respectively (which 
+   are supported in every mode).
+   
+*  the 'start' button was renamed to 'kick off' to be more consistent 
+   (the server must be started separately, the monitor can just start 
+    the game not the server)
+   
+   also another options were added:
+   
+   -m_scale <float> defines a default value for the scale button
+     
+   -m_detail <int> defines a default value for the scale button 
+         (detail 0 is also possible now)
+   
+    -m_mode defines a default value for the mode button (taking values
+        'std', 'mode' and 'view') at the moment.
+   
+    setting -m_connect_on_start to 0 (or false) you can disable 
+        immediate connecting to the server after the start.
+   
+    -m_player_num_pos_x and -m_player_num_pos_y define the relative 
+        position of the number string/char relative to the center of a 
+        player
+
+[version 1.3]
+
+new features: 
+*  new mode added: in view mode you can now show the view area of a player
+   (including feel range)
+*  player types of all players can be shown if detail is level = 3
+*  PARAM_MODE message is now used to set the goal width
+*  PT_MODE is used to show all players wrt. their types, 
+   for example: if player 1 has type 6 with kickable area= 0.9, and player 
+   radius 0.2
+     - the outer circle of the player will have radius 0.9
+     - the inner circle of the player will have radius 0.2
+   (instead of originally 1.085 and 0.3)  
+*  the option -m_show_ball_collisions (default false) lets the player blink red 
+   if he collided with the ball (or vice versa)
+
+internal changes:
+*  now players are represented as VisualObject2d. So you can easily change 
+   a player's properties at run time. It would be also very easy to provide
+   alternative player skins (for this end an intermediate abstract 
+   VisualPlayerAbstract class must be included). 
+
+[version 1.2]
+
+ first version which supported monitor protocol ver. 2 and drag and drop 
+ of players.
+
+internal changes:
+
+* several internal structures changed since version 1.1. Now VisualObject2d is 
+  a base class from which you can easily derive your own Visual classes.
+
+ ...
+
+[version 1.1]
+
+ ...
+
+[version 1.0]
+first official version

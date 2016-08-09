@@ -1,0 +1,8 @@
+rm -rf nets
+mkdir nets
+#if [ ! "$(pidof frameview)" ]
+#then
+#  @CLSQUARE_BINARY_DIR@/frameview &
+#  sleep 1
+#fi
+@CLSQUARE_EXECUTABLE@ scripts/train.cls

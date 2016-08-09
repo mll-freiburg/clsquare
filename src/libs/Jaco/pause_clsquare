@@ -1,0 +1,1 @@
+echo plant_cmd wait 0$1 > /tmp/pipe2cls

@@ -1,0 +1,18 @@
+# This is a maze-file
+# comments must begin with a '#' ' ' '%' except for the representation of the maze
+
+XXXXXXXXXXXXX
+X.....X.....X
+X.....X.....X
+X...........X
+X.....X.....X
+X.....X.....X
+XX.XXXX.....X
+X.....XXX.XXX
+X.....X.....X
+X.....X..G..X
+X...........X
+X.....X.....X
+XXXXXXXXXXXXX
+
+# end of the maze file

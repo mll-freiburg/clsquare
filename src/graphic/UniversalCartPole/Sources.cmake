@@ -1,0 +1,5 @@
+INCLUDE_DIRECTORIES(${CURRENT_LIST_DIR})
+
+LIST(APPEND graphic_srcs 
+	${CURRENT_LIST_DIR}/unipole_graphic.cc
+)

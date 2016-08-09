@@ -1,0 +1,21 @@
+#!/bin/bash
+
+PERFORMANCE_STAT="performance.stat"
+TEST_CLS="scripts/test.cls"
+CLSQUARE_BIN=@CLSQUARE_EXECUTABLE@
+
+if [ $1 -eq 0 ]; then rm -f $PERFORMANCE_STAT; 
+echo -e "#   Runs      Cycles        Fail    X+ Touch     X+ Term     X- Term      length     OutOfX+        InX+   Avg. cost      Avg. R  Avg. R_fin   bef. asym   avg. err.    min err.    max err." > $PERFORMANCE_STAT
+else
+
+echo "Do testing after training sequence: "$1
+#call clsquare with the config file for testing
+$CLSQUARE_BIN $TEST_CLS
+printf '%8u %11u' $1 $2 > tmp
+cat tmp >> $PERFORMANCE_STAT
+cat test.stat >> $PERFORMANCE_STAT
+rm -f tmp
+rm -f test.stat
+
+fi
+

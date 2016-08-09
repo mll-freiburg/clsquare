@@ -1,0 +1,3 @@
+SET ( CURRENT_LIB_NAME n++ )
+SET ( CURRENT_LIB_DEFAULT ON )
+SET ( CURRENT_LIB_TEXT "Set to OFF to exclude n++ neural network library" )

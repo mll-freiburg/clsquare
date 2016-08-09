@@ -1,0 +1,19 @@
+if [ -f test.online.stat ]
+then
+  FILE=test.online.stat
+else
+  if [ ! -f test.offline.stat ]
+  then
+    scripts/test.offline.bash
+  fi
+  FILE=test.offline.stat
+fi
+gnuplot << EOT
+set terminal postscript eps enhanced color
+set xlabel 'Episode'
+set ylabel 'Cycles'
+set output "performance.eps"
+plot "./$FILE" u 5 notitle with lines
+q
+EOT
+display -alpha off performance.eps

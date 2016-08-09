@@ -1,0 +1,11 @@
+Simple demo for the GUI tool. Upon running the script ./start,
+a cart-pole plant is launched. The torque applied to the cart
+can be adjusted with the slider in the GUI tool.
+
+KNOWN ISSUES:
+On some systems, the QT-Slider widget does not function
+properly, but keeps snapping to certain values. There is
+no known fix for this at present, though the issue can
+be worked around to some degree by changing the values
+in the parameter gui_request_string in cartpole_gui.cls,
+which should cause different locking positions.

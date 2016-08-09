@@ -1,0 +1,8 @@
+bin
+build
+include
+lib
+doc/html
+doc/latex/
+*swp
+*~

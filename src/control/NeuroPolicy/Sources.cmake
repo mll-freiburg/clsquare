@@ -1,0 +1,6 @@
+CHECK_INTERNAL ( NeuroPolicy n++ )
+
+IF ( NOT MISSING_DEPENDENCY )
+  INCLUDE_DIRECTORIES ( ${CURRENT_LIST_DIR} )
+  LIST ( APPEND controller_srcs ${CURRENT_LIST_DIR}/neuropolicy.cpp )
+ENDIF ()

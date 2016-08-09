@@ -1,0 +1,8 @@
+find_path ( PCAN_INCLUDE_DIR NAMES libpcan.h PATHS /opt/local/include /usr/local/include /usr/include )
+find_library ( PCAN_LIBRARY NAMES pcan HINTS /opt/local/lib /usr/local/lib /usr/lib )
+if ( PCAN_LIBRARY AND PCAN_INCLUDE_DIR )
+  set ( FOUND_PCAN TRUE )
+else ()
+  message ( WARNING " could not find libpcan (LIBRARY=${PCAN_LIBRARY}, INCLUDE=${PCAN_INCLUDE_DIR})" )
+endif ()
+mark_as_advanced ( PCAN_INCLUDE_DIR PCAN_LIBRARY )

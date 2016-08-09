@@ -1,0 +1,12 @@
+MountainCar benchmark using TreeController
+
+Starting the experiment:
+
+./train
+
+This will perform a learning experiment on the MountainCar plant using the 
+Fitted Q Iteration algorithm. The Q function is approximated by 'Extremely
+Randomized Trees' (ExtraTrees), one for each discrete action. After every 
+episode a shell script (test) is executed, which evaluates the current 
+contoller on a fixed set of starting positions. Results are written to a 
+text file (performance.stat). 

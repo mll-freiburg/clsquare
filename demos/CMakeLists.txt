@@ -1,0 +1,10 @@
+SET ( CLSQUARE_LIBRARY_DIR ${CMAKE_INSTALL_PREFIX}/lib )
+SET ( CLSQUARE_BINARY_DIR ${CMAKE_INSTALL_PREFIX}/bin )
+SET ( CLSQUARE_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/bin/clsquare )
+
+FILE ( GLOB_RECURSE unconfigured . *.in )
+FOREACH ( file ${unconfigured} )
+  STRING ( REPLACE ".in" "" target ${file} )
+  STRING ( REGEX REPLACE ".#" "" target ${target} )
+  CONFIGURE_FILE ( ${file} ${target} @ONLY )
+ENDFOREACH ()

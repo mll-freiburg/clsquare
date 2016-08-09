@@ -1,0 +1,3 @@
+SET ( CURRENT_LIB_NAME Dynamixel )
+SET ( CURRENT_LIB_DEFAULT OFF )
+SET ( CURRENT_LIB_TEXT "Set to ON to enable interface to Dynamixel servos" )

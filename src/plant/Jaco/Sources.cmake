@@ -1,0 +1,22 @@
+CHECK_INTERNAL ( JacoBase Jaco )
+if ( NOT MISSING_DEPENDENCY )
+  list ( APPEND plant_srcs ${CURRENT_LIST_DIR}/jacobase.cpp )
+  if ( EXISTS "${CURRENT_LIST_DIR}/legacy/jacobase-1.cpp" )
+    list ( APPEND plant_srcs ${CURRENT_LIST_DIR}/legacy/jacobase-1.cpp )
+  endif ()
+
+  CHECK_INTERNAL ( JacoVision Tapir )
+  if ( NOT MISSING_DEPENDENCY )
+    list ( APPEND plant_srcs ${CURRENT_LIST_DIR}/jacovision.cpp )
+    if ( EXISTS "${CURRENT_LIST_DIR}/legacy/jacovision-1.cpp" )
+      list ( APPEND plant_srcs ${CURRENT_LIST_DIR}/legacy/jacovision-1.cpp )
+    endif ()
+
+    CHECK_INTERNAL ( JacoFacePlant Dynamixel )
+    if ( NOT MISSING_DEPENDENCY )
+      list ( APPEND plant_srcs ${CURRENT_LIST_DIR}/jacohead.cpp )
+    endif ()
+
+  endif ()
+  set ( MISSING_DEPENDENCY FALSE PARENT_SCOPE )
+endif ()

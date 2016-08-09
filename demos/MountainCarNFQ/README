@@ -1,0 +1,17 @@
+== DESCRIPTION ==
+
+Demo for learning the mountain car task using Neural Fitted Q
+Iteration.
+
+
+== USAGE ==
+
+To start the learning process, launch the script
+./train
+Note that learning requires the NFQControl module, which
+is not included in the standard CLSquare bundle.
+Task parameters can be adjusted in the config files.
+
+To replay a previously trained policies, launch the script
+./replay
+

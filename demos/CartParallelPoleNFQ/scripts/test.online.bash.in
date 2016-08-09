@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ $1 -eq 0 ];
+then
+  echo "      100.00      100.00        0.00        0.00        0.00    99999.00        1.00     1000.00       -5.00        0.00   100000.00        0.00        0.00        0.00" > test.online.stat;
+else
+  net=`printf "%04d" $1`
+  echo "Testing network $net..."
+  sed -e "s|TESTNUM|$net|g" scripts/test.cls > test.online.cls
+    @CLSQUARE_EXECUTABLE@ test.online.cls > /dev/null
+    grep -v Fail log/test.stat >> test.online.stat
+  rm -f test.online.cls
+  rm -f log/test.prot
+  rm -f log/test.stat
+fi

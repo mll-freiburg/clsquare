@@ -1,0 +1,11 @@
+nets
+*tmp.net
+*stat
+*prot
+test.bash
+exhaustive_test
+train
+replay
+test.exhaustive.cls
+Q.test.exh.net
+test.exhaustive.1.init_states.dat

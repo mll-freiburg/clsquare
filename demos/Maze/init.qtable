@@ -1,0 +1,17 @@
+# This is a qtable definition file
+# format:
+# dimensions <xdim> <udim>
+# xsupports <min> <max> <number>    #support points for state dim 0
+# xsupports <min> <max> <number>    #support points for state dim 1
+# ...
+# actions <action definition>
+# {init <init_value>} | { ascii|binary <number of states> <number of actions>
+# data ... }
+# data format for ascii: for every state a line with <state id><q_action0_value><q_action1_value>...
+# data format for binary: NYI
+dimensions 2 1
+xsupports 0 10 11
+xsupports 0 10 11
+actions (0)(1)(2)(3)
+init 0.0
+
